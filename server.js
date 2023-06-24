@@ -8,12 +8,12 @@ const slotsrouter = require("./controllers/slots.router");
 
 const app = express();
 let requestCntr = 0;
-
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan("tiny"));
 app.use(express.json());
-app.use(cors());
+app.options("*", cors());
 
 app.use("/api/v1/", flightsrouter);
 app.use("/api/v1/user", flightsrouter);
