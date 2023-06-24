@@ -10,10 +10,10 @@ const slotsDAO = require("./dao/slots.js");
 async function main() {
   dotenv.config({ path: "./file.env" });
   const client = new mongodb.MongoClient(process.env.MONOGODB_CONNECT_URI);
-  const port = process.env.port;
+  const port = process.env.port || 5000;
 
   try {
-    await client.connect();
+    await client.connect().then(console.log("db connected"));
     await AdminDAO.injectDB(client);
     await UsersDAO.injectDB(client);
     await VaccineDao.injectDB(client);
