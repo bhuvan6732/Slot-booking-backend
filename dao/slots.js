@@ -15,9 +15,8 @@ module.exports = class ReviewsDAO {
   }
   static async getSlot(obj) {
     try {
-      console.log(obj);
       const cursor = await slotscollection.find({
-        centerid: obj.centerid,
+        centerid: new ObjectId(obj.centerid),
         date: obj.date,
       });
       const User_slot = cursor.toArray();

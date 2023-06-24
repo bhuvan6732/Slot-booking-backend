@@ -5,12 +5,10 @@ const bcrypt = require("bcrypt");
 module.exports = class slotscontroller {
   //
   static async apiGetSlot(req, res) {
-    console.log("error");
     let filters = {
-      centerid: new ObjectId(req.body.centerid),
+      centerid: req.body.centerid,
       date: req.body.date,
     };
-    console.log(filters);
     const Slot = await slotsDAO.getSlot(filters);
     res.json(Slot);
   }
@@ -24,7 +22,6 @@ module.exports = class slotscontroller {
           date: req.body.date,
           time: req.body.time,
         };
-        console.log(slotobj);
         const userresponse = await slotsDAO.addSlot(slotobj);
         res.json(userresponse);
       }

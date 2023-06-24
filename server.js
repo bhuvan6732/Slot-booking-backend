@@ -7,6 +7,8 @@ const centerrouter = require("./controllers/center.router");
 const slotsrouter = require("./controllers/slots.router");
 
 const app = express();
+let requestCntr = 0;
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan("tiny"));
