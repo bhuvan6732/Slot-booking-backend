@@ -64,9 +64,7 @@ module.exports = class ReviewsDAO {
         _id: obj.adminid,
       };
       const adminuser = await AdminDAO.getUser(userobj);
-      console.log(adminuser, "adminuser", existingCenter);
       if (adminuser._id == null) {
-        console.log("Admins only can add center");
       }
       if (existingCenter != null) {
         return { status: "fail", message: "Center already exists" };
