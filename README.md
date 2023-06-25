@@ -13,9 +13,9 @@ This is the backend server for the Slot Booking application. It provides APIs fo
 
 1. Clone the repository.
 2. Install the dependencies.
-3. Set up the database connection. Update the MongoDB connection URL in the `config.js` file.
+3. Set up the database connection. Update the MongoDB connection URL in the `file.env` file.
 4. Start the server.
-5. The server will run at `http://localhost:8000`.
+5. The server will run at `http://localhost:5000`.
 
 ## API Endpoints
 
